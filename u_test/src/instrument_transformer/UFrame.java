@@ -72,6 +72,14 @@ public class UFrame extends JFrame {
 	private JTextField ceShiRen;
 	private JTextField ceShiRiQi;
 	private JTextField ceShiJieLun;
+	private JTextField textField;
+	private JTextField textField_1;
+	private JTextField textField_2;
+	private JTextField textField_3;
+	private JTextField textField_4;
+	private JTextField textField_5;
+	private JTextField textField_6;
+	private JTextField textField_7;
 
 	/**
 	 * 初始化
@@ -786,6 +794,159 @@ public class UFrame extends JFrame {
 		panel_base.add(ceShiJieLun, gbc_ceShiJieLun);
 		ceShiJieLun.setColumns(10);
 		
+		JPanel panel_test = new JPanel();
+		tabbedPane.addTab("测试信息", null, panel_test, null);
+		GridBagLayout gbl_panel_test = new GridBagLayout();
+		gbl_panel_test.columnWidths = new int[]{45, 0, 80, 0, 80, 0, 0, 60, 50, 0};
+		gbl_panel_test.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+		gbl_panel_test.columnWeights = new double[]{1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, Double.MIN_VALUE};
+		gbl_panel_test.rowWeights = new double[]{1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, Double.MIN_VALUE};
+		panel_test.setLayout(gbl_panel_test);
+		
+		JLabel label_23 = new JLabel("一次电压");
+		GridBagConstraints gbc_label_23 = new GridBagConstraints();
+		gbc_label_23.gridwidth = 2;
+		gbc_label_23.insets = new Insets(0, 0, 5, 5);
+		gbc_label_23.gridx = 0;
+		gbc_label_23.gridy = 0;
+		panel_test.add(label_23, gbc_label_23);
+		
+		textField = new JTextField();
+		textField.setColumns(10);
+		GridBagConstraints gbc_textField = new GridBagConstraints();
+		gbc_textField.fill = GridBagConstraints.HORIZONTAL;
+		gbc_textField.gridwidth = 2;
+		gbc_textField.insets = new Insets(0, 0, 5, 5);
+		gbc_textField.gridx = 2;
+		gbc_textField.gridy = 0;
+		panel_test.add(textField, gbc_textField);
+		
+		JLabel label_24 = new JLabel("二次电压");
+		GridBagConstraints gbc_label_24 = new GridBagConstraints();
+		gbc_label_24.gridwidth = 2;
+		gbc_label_24.insets = new Insets(0, 0, 5, 5);
+		gbc_label_24.gridx = 4;
+		gbc_label_24.gridy = 0;
+		panel_test.add(label_24, gbc_label_24);
+		
+		textField_1 = new JTextField();
+		textField_1.setColumns(10);
+		GridBagConstraints gbc_textField_1 = new GridBagConstraints();
+		gbc_textField_1.fill = GridBagConstraints.HORIZONTAL;
+		gbc_textField_1.gridwidth = 2;
+		gbc_textField_1.insets = new Insets(0, 0, 5, 5);
+		gbc_textField_1.gridx = 6;
+		gbc_textField_1.gridy = 0;
+		panel_test.add(textField_1, gbc_textField_1);
+		
+		JLabel label_25 = new JLabel("功率因素");
+		GridBagConstraints gbc_label_25 = new GridBagConstraints();
+		gbc_label_25.gridwidth = 2;
+		gbc_label_25.insets = new Insets(0, 0, 5, 5);
+		gbc_label_25.gridx = 0;
+		gbc_label_25.gridy = 2;
+		panel_test.add(label_25, gbc_label_25);
+		
+		textField_2 = new JTextField();
+		textField_2.setColumns(10);
+		GridBagConstraints gbc_textField_2 = new GridBagConstraints();
+		gbc_textField_2.gridwidth = 2;
+		gbc_textField_2.insets = new Insets(0, 0, 5, 5);
+		gbc_textField_2.fill = GridBagConstraints.HORIZONTAL;
+		gbc_textField_2.gridx = 2;
+		gbc_textField_2.gridy = 2;
+		panel_test.add(textField_2, gbc_textField_2);
+		
+		JLabel label_26 = new JLabel("准确等级");
+		GridBagConstraints gbc_label_26 = new GridBagConstraints();
+		gbc_label_26.gridwidth = 2;
+		gbc_label_26.insets = new Insets(0, 0, 5, 5);
+		gbc_label_26.gridx = 4;
+		gbc_label_26.gridy = 2;
+		panel_test.add(label_26, gbc_label_26);
+		
+		textField_3 = new JTextField();
+		textField_3.setColumns(10);
+		GridBagConstraints gbc_textField_3 = new GridBagConstraints();
+		gbc_textField_3.gridwidth = 2;
+		gbc_textField_3.insets = new Insets(0, 0, 5, 5);
+		gbc_textField_3.fill = GridBagConstraints.HORIZONTAL;
+		gbc_textField_3.gridx = 6;
+		gbc_textField_3.gridy = 2;
+		panel_test.add(textField_3, gbc_textField_3);
+		
+		JLabel label_27 = new JLabel("额定负荷");
+		GridBagConstraints gbc_label_27 = new GridBagConstraints();
+		gbc_label_27.gridwidth = 2;
+		gbc_label_27.insets = new Insets(0, 0, 5, 5);
+		gbc_label_27.gridx = 0;
+		gbc_label_27.gridy = 4;
+		panel_test.add(label_27, gbc_label_27);
+		
+		textField_4 = new JTextField();
+		textField_4.setColumns(10);
+		GridBagConstraints gbc_textField_4 = new GridBagConstraints();
+		gbc_textField_4.gridwidth = 2;
+		gbc_textField_4.insets = new Insets(0, 0, 5, 5);
+		gbc_textField_4.fill = GridBagConstraints.HORIZONTAL;
+		gbc_textField_4.gridx = 2;
+		gbc_textField_4.gridy = 4;
+		panel_test.add(textField_4, gbc_textField_4);
+		
+		JLabel label_30 = new JLabel("下限负荷");
+		GridBagConstraints gbc_label_30 = new GridBagConstraints();
+		gbc_label_30.gridwidth = 2;
+		gbc_label_30.insets = new Insets(0, 0, 5, 5);
+		gbc_label_30.gridx = 4;
+		gbc_label_30.gridy = 4;
+		panel_test.add(label_30, gbc_label_30);
+		
+		textField_6 = new JTextField();
+		textField_6.setColumns(10);
+		GridBagConstraints gbc_textField_6 = new GridBagConstraints();
+		gbc_textField_6.gridwidth = 2;
+		gbc_textField_6.insets = new Insets(0, 0, 5, 5);
+		gbc_textField_6.fill = GridBagConstraints.HORIZONTAL;
+		gbc_textField_6.gridx = 6;
+		gbc_textField_6.gridy = 4;
+		panel_test.add(textField_6, gbc_textField_6);
+		
+		JLabel label_28 = new JLabel("第二绕阻负荷");
+		GridBagConstraints gbc_label_28 = new GridBagConstraints();
+		gbc_label_28.gridwidth = 2;
+		gbc_label_28.insets = new Insets(0, 0, 5, 5);
+		gbc_label_28.gridx = 0;
+		gbc_label_28.gridy = 6;
+		panel_test.add(label_28, gbc_label_28);
+		
+		textField_5 = new JTextField();
+		textField_5.setColumns(10);
+		GridBagConstraints gbc_textField_5 = new GridBagConstraints();
+		gbc_textField_5.gridwidth = 2;
+		gbc_textField_5.insets = new Insets(0, 0, 5, 5);
+		gbc_textField_5.fill = GridBagConstraints.HORIZONTAL;
+		gbc_textField_5.gridx = 2;
+		gbc_textField_5.gridy = 6;
+		panel_test.add(textField_5, gbc_textField_5);
+		
+		JLabel label_31 = new JLabel("第二绕阻下限负荷");
+		GridBagConstraints gbc_label_31 = new GridBagConstraints();
+		gbc_label_31.gridwidth = 2;
+		gbc_label_31.insets = new Insets(0, 0, 5, 5);
+		gbc_label_31.gridx = 4;
+		gbc_label_31.gridy = 6;
+		panel_test.add(label_31, gbc_label_31);
+		
+		textField_7 = new JTextField();
+		textField_7.setColumns(10);
+		GridBagConstraints gbc_textField_7 = new GridBagConstraints();
+		gbc_textField_7.gridwidth = 2;
+		gbc_textField_7.insets = new Insets(0, 0, 5, 5);
+		gbc_textField_7.fill = GridBagConstraints.HORIZONTAL;
+		gbc_textField_7.gridx = 6;
+		gbc_textField_7.gridy = 6;
+		panel_test.add(textField_7, gbc_textField_7);
+		
 		JPanel panel_ab = new JPanel();
 		tabbedPane.addTab("AB误差", null, panel_ab, null);
 		GridBagLayout layout_ab = new GridBagLayout();
@@ -795,7 +956,7 @@ public class UFrame extends JFrame {
 		layout_ab.rowWeights = new double[]{0.5,1,1,1,1};
 		panel_ab.setLayout(layout_ab);
 		
-		JLabel lblNewLabel_1 = new JLabel("百分表");
+		JLabel lblNewLabel_1 = new JLabel("百分比");
 		GridBagConstraints gbc_lblNewLabel_1 = new GridBagConstraints();
 		gbc_lblNewLabel_1.insets = new Insets(0, 0, 5, 5);
 		gbc_lblNewLabel_1.gridwidth = 3;
@@ -932,7 +1093,7 @@ public class UFrame extends JFrame {
 		layout_bc.rowWeights = new double[]{0.5,1,1,1,1};
 		panel_bc.setLayout(layout_bc);
 		
-		JLabel label = new JLabel("百分表");
+		JLabel label = new JLabel("百分比");
 		GridBagConstraints gbc_label = new GridBagConstraints();
 		gbc_label.gridwidth = 3;
 		gbc_label.insets = new Insets(0, 0, 5, 5);
@@ -1066,7 +1227,7 @@ public class UFrame extends JFrame {
 		layout_ca.rowWeights = new double[]{0.5,1,1,1,1};
 		panel_ca.setLayout(layout_ca);
 		
-		JLabel label_11 = new JLabel("百分表");
+		JLabel label_11 = new JLabel("百分比");
 		GridBagConstraints gbc_label_11 = new GridBagConstraints();
 		gbc_label_11.gridwidth = 3;
 		gbc_label_11.insets = new Insets(0, 0, 5, 5);

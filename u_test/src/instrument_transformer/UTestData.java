@@ -26,11 +26,11 @@ public class UTestData {
 		DefaultTableModel model=new DefaultTableModel();
 		Vector<Vector<String>> data=new Vector<>();//table的数据
 		Vector<String> column=new Vector<>();//table的列名
-		column.add(0, "20");
-		column.add(1, "50");
-		column.add(2, "80");
-		column.add(3, "100");
-		column.add(4, "120");
+		column.add(0, "20%");
+		column.add(1, "50%");
+		column.add(2, "80%");
+		column.add(3, "100%");
+		column.add(4, "120%");
 		Vector<String> row1=new Vector<>();//满载-比差
 		Vector<String> row2=new Vector<>();//满载-相位差
 		Vector<String> row3=new Vector<>();//轻载-比差

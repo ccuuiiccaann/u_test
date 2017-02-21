@@ -27,7 +27,7 @@ public class UBaseInfo {
 		Vector<Vector<String>> data=new Vector<>();//table的数据
 		Vector<String> column=new Vector<>();//table的列名
 		column.add(0, "ID");//主键
-		column.add(1, "测试编号");
+		column.add(1, "证书编号");
 		column.add(2, "测试日期");
 		Connection conn=DBConnection.getInstance();
 		try {
