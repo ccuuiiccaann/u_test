@@ -136,7 +136,7 @@ public class UFrame extends JFrame {
 			        if(file!=null){
 			        	String filePath=file.getAbsolutePath();
 			        	System.out.println(filePath); 
-			        	String s=ImportUtil.ImportUTestData(filePath);
+			        	String s=ImportUtil.ImportUTestData(filePath,zhengShuBianHao);
 			        	JOptionPane.showMessageDialog(null, s);
 			        	if(MainFrame.uFrame.uBaseTable!=null){
 			        		MainFrame.uFrame.uBaseTable.setModel(UBaseInfo.getUTableData());
