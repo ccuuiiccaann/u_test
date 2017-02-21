@@ -35,6 +35,9 @@ import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
 import javax.swing.table.TableModel;
+import javax.swing.JComboBox;
+
+import java.awt.Font;
 
 public class UFrame extends JFrame {
 
@@ -75,11 +78,11 @@ public class UFrame extends JFrame {
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
-	private JTextField textField_3;
 	private JTextField textField_4;
 	private JTextField textField_5;
 	private JTextField textField_6;
 	private JTextField textField_7;
+	private JTextField textField_3;
 
 	/**
 	 * 初始化
@@ -111,12 +114,21 @@ public class UFrame extends JFrame {
 		setJMenuBar(menuBar);
 		
 		JMenu mnNewMenu = new JMenu("测试数据导入");
+//		mnNewMenu.setFont(new Font("Microsoft YaHei", Font.BOLD, 12));
+		mnNewMenu.setForeground(Color.BLUE);
 		menuBar.add(mnNewMenu);
 		
-		JMenuItem menuItem = new JMenuItem("导入测试数据");
+		 JMenuItem menuItem = new JMenuItem("导入测试数据");
 		menuItem.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseReleased(MouseEvent e) {
+				String zhengShuBianHao=JOptionPane.showInputDialog("请输入证书编号:");
+				System.out.println(zhengShuBianHao+"000000");
+				if(zhengShuBianHao==null )return;
+				if("".equals(zhengShuBianHao)){
+					JOptionPane.showMessageDialog(null, "证书编号不能为空");
+					return;
+				}
 				 JFileChooser jfc=new JFileChooser();  
 			        jfc.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES );  
 			        jfc.showDialog(new JLabel(), "选择");  
@@ -865,15 +877,15 @@ public class UFrame extends JFrame {
 		gbc_label_26.gridy = 2;
 		panel_test.add(label_26, gbc_label_26);
 		
-		textField_3 = new JTextField();
-		textField_3.setColumns(10);
-		GridBagConstraints gbc_textField_3 = new GridBagConstraints();
-		gbc_textField_3.gridwidth = 2;
-		gbc_textField_3.insets = new Insets(0, 0, 5, 5);
-		gbc_textField_3.fill = GridBagConstraints.HORIZONTAL;
-		gbc_textField_3.gridx = 6;
-		gbc_textField_3.gridy = 2;
-		panel_test.add(textField_3, gbc_textField_3);
+		String[] levles=new String[]{"0.1","0.2","0.5"};
+		JComboBox comboBox = new JComboBox(levles);
+		GridBagConstraints gbc_comboBox = new GridBagConstraints();
+		gbc_comboBox.gridwidth = 2;
+		gbc_comboBox.insets = new Insets(0, 0, 5, 5);
+		gbc_comboBox.fill = GridBagConstraints.HORIZONTAL;
+		gbc_comboBox.gridx = 6;
+		gbc_comboBox.gridy = 2;
+		panel_test.add(comboBox, gbc_comboBox);
 		
 		JLabel label_27 = new JLabel("额定负荷");
 		GridBagConstraints gbc_label_27 = new GridBagConstraints();
@@ -946,6 +958,24 @@ public class UFrame extends JFrame {
 		gbc_textField_7.gridx = 6;
 		gbc_textField_7.gridy = 6;
 		panel_test.add(textField_7, gbc_textField_7);
+		
+		JLabel label_29 = new JLabel("测试编号");
+		GridBagConstraints gbc_label_29 = new GridBagConstraints();
+		gbc_label_29.gridwidth = 2;
+		gbc_label_29.insets = new Insets(0, 0, 0, 5);
+		gbc_label_29.gridx = 0;
+		gbc_label_29.gridy = 8;
+		panel_test.add(label_29, gbc_label_29);
+		
+		textField_3 = new JTextField();
+		textField_3.setColumns(10);
+		GridBagConstraints gbc_textField_3 = new GridBagConstraints();
+		gbc_textField_3.gridwidth = 2;
+		gbc_textField_3.insets = new Insets(0, 0, 0, 5);
+		gbc_textField_3.fill = GridBagConstraints.HORIZONTAL;
+		gbc_textField_3.gridx = 2;
+		gbc_textField_3.gridy = 8;
+		panel_test.add(textField_3, gbc_textField_3);
 		
 		JPanel panel_ab = new JPanel();
 		tabbedPane.addTab("AB误差", null, panel_ab, null);

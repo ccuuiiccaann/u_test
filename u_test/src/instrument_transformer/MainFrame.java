@@ -85,18 +85,8 @@ public class MainFrame extends JFrame {
 				uFrame.setVisible(true);
 			}
 		});
-		btnUTest.setBounds(34, 41, 141, 23);
+		btnUTest.setBounds(148, 79, 141, 23);
 		getContentPane().add(btnUTest);
-		
-		JButton btnITest = new JButton("电流互感器");
-		btnITest.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				frame.setVisible(false);
-			}
-		});
-		btnITest.setBounds(264, 41, 132, 23);
-		getContentPane().add(btnITest);
 		
 		//初始化电压的frame
 	}
