@@ -131,6 +131,48 @@ public class UBaseInfo {
 	}
 	
 	/**
+	 * 查询电压测试信息
+	 * @param baseId
+	 * @return HashMap,key为JTextField 变量名，value为该变量对应的值
+	 */
+	public static HashMap<String,String> getUTestInfo(Long baseId){
+		HashMap<String,String> map=new HashMap<>();
+		Connection conn=DBConnection.getInstance();
+		try {
+			Statement st=conn.createStatement();
+			String sql="select *  from u_base_info where id="+baseId+"";
+			ResultSet rs=st.executeQuery(sql);
+			while (rs.next()) {
+				String yiciDianya=rs.getString("u1");
+				String erciDianya=rs.getString("u2");
+				String gonglvYinsu=rs.getString("gonglv_yinsu");
+				String zhunqueDengji=rs.getString("zhunque_dengji");
+				String edingFuhe=rs.getString("eding_fuhe");
+				String xiaxianFuhe=rs.getString("xiaxian_fuhe");
+				String dierRaozuFuhe=rs.getString("sna2");
+				String dierRaozuXiaxianFuhe=rs.getString("lna2");
+				String ceshiBianhao=rs.getString("ceshi_bianhao");
+				map.put("yiciDianya", yiciDianya);
+				map.put("erciDianya", erciDianya);
+				map.put("gonglvYinsu", gonglvYinsu);
+				map.put("zhunqueDengji", zhunqueDengji);
+				map.put("edingFuhe", edingFuhe);
+				map.put("xiaxianFuhe", xiaxianFuhe);
+				map.put("yiciDianya", yiciDianya);
+				map.put("dierRaozuFuhe", dierRaozuFuhe);
+				map.put("dierRaozuXiaxianFuhe", dierRaozuXiaxianFuhe);
+				map.put("ceshiBianhao", ceshiBianhao);
+			}
+			rs.close();
+			st.close();
+			return map;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	/**
 	 * 插入电压基本信息数据，同时插入空的测试数据信息。这样在录入测试数据时，只需update即可
 	 * 两个插入操作是一个事务
 	 * @param map 键值对，key为JTextField 变量名，value为该变量对应的值

@@ -30,6 +30,10 @@ public class Constant {
 	 */
 	public static final String TEST_DATA_C="C";
 	/**
+	 * 标识，是测试数据
+	 */
+	public static final String TEST_DATA_TEST="test";
+	/**
 	 * 标识，是基本数据
 	 */
 	public static final String TEST_DATA_BASE="BASE";

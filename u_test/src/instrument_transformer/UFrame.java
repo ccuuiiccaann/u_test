@@ -75,14 +75,15 @@ public class UFrame extends JFrame {
 	private JTextField ceShiRen;
 	private JTextField ceShiRiQi;
 	private JTextField ceShiJieLun;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_4;
-	private JTextField textField_5;
-	private JTextField textField_6;
-	private JTextField textField_7;
-	private JTextField textField_3;
+	private JTextField yiciDianya;
+	private JTextField erciDianya;
+	private JTextField gonglvYinsu;
+	private JTextField edingFuhe;
+	private JTextField dierRaozuFuhe;
+	private JTextField xiaxianFuhe;
+	private JTextField dierRaozuXiaxianFuhe;
+	private JTextField ceshiBianhao;
+	private JComboBox zhunqueDengji;
 
 	/**
 	 * 初始化
@@ -287,14 +288,18 @@ public class UFrame extends JFrame {
 				int index=selectedTab.getSelectedIndex();
 				System.out.println("选中tab的index="+index);
 				if(index==1){
+					Constant.TAB_ABC=Constant.TEST_DATA_TEST;
+					System.out.println("开始加载测试数据");
+					loadUTestData(Constant.BASE_ID);
+				}else if(index==2){
 					Constant.TAB_ABC=Constant.TEST_DATA_A;
 					System.out.println("开始加载测试数据a");
 					table_ab.setModel(UTestData.getUTestData(Constant.BASE_ID, Constant.TAB_ABC));
 					
-				}else if(index==2){
+				}else if(index==3){
 					Constant.TAB_ABC=Constant.TEST_DATA_B;
 					table_bc.setModel(UTestData.getUTestData(Constant.BASE_ID, Constant.TAB_ABC));
-				}else if(index==3){
+				}else if(index==4){
 					Constant.TAB_ABC=Constant.TEST_DATA_C;
 					table_ca.setModel(UTestData.getUTestData(Constant.BASE_ID, Constant.TAB_ABC));
 				}else {
@@ -823,15 +828,15 @@ public class UFrame extends JFrame {
 		gbc_label_23.gridy = 0;
 		panel_test.add(label_23, gbc_label_23);
 		
-		textField = new JTextField();
-		textField.setColumns(10);
-		GridBagConstraints gbc_textField = new GridBagConstraints();
-		gbc_textField.fill = GridBagConstraints.HORIZONTAL;
-		gbc_textField.gridwidth = 2;
-		gbc_textField.insets = new Insets(0, 0, 5, 5);
-		gbc_textField.gridx = 2;
-		gbc_textField.gridy = 0;
-		panel_test.add(textField, gbc_textField);
+		yiciDianya = new JTextField();
+		yiciDianya.setColumns(10);
+		GridBagConstraints gbc_yiciDianya = new GridBagConstraints();
+		gbc_yiciDianya.fill = GridBagConstraints.HORIZONTAL;
+		gbc_yiciDianya.gridwidth = 2;
+		gbc_yiciDianya.insets = new Insets(0, 0, 5, 5);
+		gbc_yiciDianya.gridx = 2;
+		gbc_yiciDianya.gridy = 0;
+		panel_test.add(yiciDianya, gbc_yiciDianya);
 		
 		JLabel label_24 = new JLabel("二次电压");
 		GridBagConstraints gbc_label_24 = new GridBagConstraints();
@@ -841,15 +846,15 @@ public class UFrame extends JFrame {
 		gbc_label_24.gridy = 0;
 		panel_test.add(label_24, gbc_label_24);
 		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		GridBagConstraints gbc_textField_1 = new GridBagConstraints();
-		gbc_textField_1.fill = GridBagConstraints.HORIZONTAL;
-		gbc_textField_1.gridwidth = 2;
-		gbc_textField_1.insets = new Insets(0, 0, 5, 5);
-		gbc_textField_1.gridx = 6;
-		gbc_textField_1.gridy = 0;
-		panel_test.add(textField_1, gbc_textField_1);
+		erciDianya = new JTextField();
+		erciDianya.setColumns(10);
+		GridBagConstraints gbc_erciDianya = new GridBagConstraints();
+		gbc_erciDianya.fill = GridBagConstraints.HORIZONTAL;
+		gbc_erciDianya.gridwidth = 2;
+		gbc_erciDianya.insets = new Insets(0, 0, 5, 5);
+		gbc_erciDianya.gridx = 6;
+		gbc_erciDianya.gridy = 0;
+		panel_test.add(erciDianya, gbc_erciDianya);
 		
 		JLabel label_25 = new JLabel("功率因素");
 		GridBagConstraints gbc_label_25 = new GridBagConstraints();
@@ -859,15 +864,15 @@ public class UFrame extends JFrame {
 		gbc_label_25.gridy = 2;
 		panel_test.add(label_25, gbc_label_25);
 		
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
-		GridBagConstraints gbc_textField_2 = new GridBagConstraints();
-		gbc_textField_2.gridwidth = 2;
-		gbc_textField_2.insets = new Insets(0, 0, 5, 5);
-		gbc_textField_2.fill = GridBagConstraints.HORIZONTAL;
-		gbc_textField_2.gridx = 2;
-		gbc_textField_2.gridy = 2;
-		panel_test.add(textField_2, gbc_textField_2);
+		gonglvYinsu = new JTextField();
+		gonglvYinsu.setColumns(10);
+		GridBagConstraints gbc_gonglvYinsu = new GridBagConstraints();
+		gbc_gonglvYinsu.gridwidth = 2;
+		gbc_gonglvYinsu.insets = new Insets(0, 0, 5, 5);
+		gbc_gonglvYinsu.fill = GridBagConstraints.HORIZONTAL;
+		gbc_gonglvYinsu.gridx = 2;
+		gbc_gonglvYinsu.gridy = 2;
+		panel_test.add(gonglvYinsu, gbc_gonglvYinsu);
 		
 		JLabel label_26 = new JLabel("准确等级");
 		GridBagConstraints gbc_label_26 = new GridBagConstraints();
@@ -878,14 +883,14 @@ public class UFrame extends JFrame {
 		panel_test.add(label_26, gbc_label_26);
 		
 		String[] levles=new String[]{"0.1","0.2","0.5"};
-		JComboBox comboBox = new JComboBox(levles);
-		GridBagConstraints gbc_comboBox = new GridBagConstraints();
-		gbc_comboBox.gridwidth = 2;
-		gbc_comboBox.insets = new Insets(0, 0, 5, 5);
-		gbc_comboBox.fill = GridBagConstraints.HORIZONTAL;
-		gbc_comboBox.gridx = 6;
-		gbc_comboBox.gridy = 2;
-		panel_test.add(comboBox, gbc_comboBox);
+		zhunqueDengji = new JComboBox(levles);
+		GridBagConstraints gbc_zhunqueDengji = new GridBagConstraints();
+		gbc_zhunqueDengji.gridwidth = 2;
+		gbc_zhunqueDengji.insets = new Insets(0, 0, 5, 5);
+		gbc_zhunqueDengji.fill = GridBagConstraints.HORIZONTAL;
+		gbc_zhunqueDengji.gridx = 6;
+		gbc_zhunqueDengji.gridy = 2;
+		panel_test.add(zhunqueDengji, gbc_zhunqueDengji);
 		
 		JLabel label_27 = new JLabel("额定负荷");
 		GridBagConstraints gbc_label_27 = new GridBagConstraints();
@@ -895,15 +900,15 @@ public class UFrame extends JFrame {
 		gbc_label_27.gridy = 4;
 		panel_test.add(label_27, gbc_label_27);
 		
-		textField_4 = new JTextField();
-		textField_4.setColumns(10);
-		GridBagConstraints gbc_textField_4 = new GridBagConstraints();
-		gbc_textField_4.gridwidth = 2;
-		gbc_textField_4.insets = new Insets(0, 0, 5, 5);
-		gbc_textField_4.fill = GridBagConstraints.HORIZONTAL;
-		gbc_textField_4.gridx = 2;
-		gbc_textField_4.gridy = 4;
-		panel_test.add(textField_4, gbc_textField_4);
+		edingFuhe = new JTextField();
+		edingFuhe.setColumns(10);
+		GridBagConstraints gbc_edingFuhe = new GridBagConstraints();
+		gbc_edingFuhe.gridwidth = 2;
+		gbc_edingFuhe.insets = new Insets(0, 0, 5, 5);
+		gbc_edingFuhe.fill = GridBagConstraints.HORIZONTAL;
+		gbc_edingFuhe.gridx = 2;
+		gbc_edingFuhe.gridy = 4;
+		panel_test.add(edingFuhe, gbc_edingFuhe);
 		
 		JLabel label_30 = new JLabel("下限负荷");
 		GridBagConstraints gbc_label_30 = new GridBagConstraints();
@@ -913,15 +918,15 @@ public class UFrame extends JFrame {
 		gbc_label_30.gridy = 4;
 		panel_test.add(label_30, gbc_label_30);
 		
-		textField_6 = new JTextField();
-		textField_6.setColumns(10);
-		GridBagConstraints gbc_textField_6 = new GridBagConstraints();
-		gbc_textField_6.gridwidth = 2;
-		gbc_textField_6.insets = new Insets(0, 0, 5, 5);
-		gbc_textField_6.fill = GridBagConstraints.HORIZONTAL;
-		gbc_textField_6.gridx = 6;
-		gbc_textField_6.gridy = 4;
-		panel_test.add(textField_6, gbc_textField_6);
+		xiaxianFuhe = new JTextField();
+		xiaxianFuhe.setColumns(10);
+		GridBagConstraints gbc_xiaxianFuhe = new GridBagConstraints();
+		gbc_xiaxianFuhe.gridwidth = 2;
+		gbc_xiaxianFuhe.insets = new Insets(0, 0, 5, 5);
+		gbc_xiaxianFuhe.fill = GridBagConstraints.HORIZONTAL;
+		gbc_xiaxianFuhe.gridx = 6;
+		gbc_xiaxianFuhe.gridy = 4;
+		panel_test.add(xiaxianFuhe, gbc_xiaxianFuhe);
 		
 		JLabel label_28 = new JLabel("第二绕阻负荷");
 		GridBagConstraints gbc_label_28 = new GridBagConstraints();
@@ -931,15 +936,15 @@ public class UFrame extends JFrame {
 		gbc_label_28.gridy = 6;
 		panel_test.add(label_28, gbc_label_28);
 		
-		textField_5 = new JTextField();
-		textField_5.setColumns(10);
-		GridBagConstraints gbc_textField_5 = new GridBagConstraints();
-		gbc_textField_5.gridwidth = 2;
-		gbc_textField_5.insets = new Insets(0, 0, 5, 5);
-		gbc_textField_5.fill = GridBagConstraints.HORIZONTAL;
-		gbc_textField_5.gridx = 2;
-		gbc_textField_5.gridy = 6;
-		panel_test.add(textField_5, gbc_textField_5);
+		dierRaozuFuhe = new JTextField();
+		dierRaozuFuhe.setColumns(10);
+		GridBagConstraints gbc_dierRaozuFuhe = new GridBagConstraints();
+		gbc_dierRaozuFuhe.gridwidth = 2;
+		gbc_dierRaozuFuhe.insets = new Insets(0, 0, 5, 5);
+		gbc_dierRaozuFuhe.fill = GridBagConstraints.HORIZONTAL;
+		gbc_dierRaozuFuhe.gridx = 2;
+		gbc_dierRaozuFuhe.gridy = 6;
+		panel_test.add(dierRaozuFuhe, gbc_dierRaozuFuhe);
 		
 		JLabel label_31 = new JLabel("第二绕阻下限负荷");
 		GridBagConstraints gbc_label_31 = new GridBagConstraints();
@@ -949,15 +954,15 @@ public class UFrame extends JFrame {
 		gbc_label_31.gridy = 6;
 		panel_test.add(label_31, gbc_label_31);
 		
-		textField_7 = new JTextField();
-		textField_7.setColumns(10);
-		GridBagConstraints gbc_textField_7 = new GridBagConstraints();
-		gbc_textField_7.gridwidth = 2;
-		gbc_textField_7.insets = new Insets(0, 0, 5, 5);
-		gbc_textField_7.fill = GridBagConstraints.HORIZONTAL;
-		gbc_textField_7.gridx = 6;
-		gbc_textField_7.gridy = 6;
-		panel_test.add(textField_7, gbc_textField_7);
+		dierRaozuXiaxianFuhe = new JTextField();
+		dierRaozuXiaxianFuhe.setColumns(10);
+		GridBagConstraints gbc_dierRaozuXiaxianFuhe = new GridBagConstraints();
+		gbc_dierRaozuXiaxianFuhe.gridwidth = 2;
+		gbc_dierRaozuXiaxianFuhe.insets = new Insets(0, 0, 5, 5);
+		gbc_dierRaozuXiaxianFuhe.fill = GridBagConstraints.HORIZONTAL;
+		gbc_dierRaozuXiaxianFuhe.gridx = 6;
+		gbc_dierRaozuXiaxianFuhe.gridy = 6;
+		panel_test.add(dierRaozuXiaxianFuhe, gbc_dierRaozuXiaxianFuhe);
 		
 		JLabel label_29 = new JLabel("测试编号");
 		GridBagConstraints gbc_label_29 = new GridBagConstraints();
@@ -967,15 +972,15 @@ public class UFrame extends JFrame {
 		gbc_label_29.gridy = 8;
 		panel_test.add(label_29, gbc_label_29);
 		
-		textField_3 = new JTextField();
-		textField_3.setColumns(10);
-		GridBagConstraints gbc_textField_3 = new GridBagConstraints();
-		gbc_textField_3.gridwidth = 2;
-		gbc_textField_3.insets = new Insets(0, 0, 0, 5);
-		gbc_textField_3.fill = GridBagConstraints.HORIZONTAL;
-		gbc_textField_3.gridx = 2;
-		gbc_textField_3.gridy = 8;
-		panel_test.add(textField_3, gbc_textField_3);
+		ceshiBianhao = new JTextField();
+		ceshiBianhao.setColumns(10);
+		GridBagConstraints gbc_ceshiBianhao = new GridBagConstraints();
+		gbc_ceshiBianhao.gridwidth = 2;
+		gbc_ceshiBianhao.insets = new Insets(0, 0, 0, 5);
+		gbc_ceshiBianhao.fill = GridBagConstraints.HORIZONTAL;
+		gbc_ceshiBianhao.gridx = 2;
+		gbc_ceshiBianhao.gridy = 8;
+		panel_test.add(ceshiBianhao, gbc_ceshiBianhao);
 		
 		JPanel panel_ab = new JPanel();
 		tabbedPane.addTab("AB误差", null, panel_ab, null);
@@ -1420,11 +1425,14 @@ public class UFrame extends JFrame {
 					if(Constant.TAB_ABC.equals(Constant.TEST_DATA_A)){
 						table_ab.setModel(UTestData.getUTestData(Constant.BASE_ID, Constant.TAB_ABC));
 						
-					}if(Constant.TAB_ABC.equals(Constant.TEST_DATA_B)){
+					}else if(Constant.TAB_ABC.equals(Constant.TEST_DATA_B)){
 						table_bc.setModel(UTestData.getUTestData(Constant.BASE_ID, Constant.TAB_ABC));
-					}if(Constant.TAB_ABC.equals(Constant.TEST_DATA_C)){
+					}else if(Constant.TAB_ABC.equals(Constant.TEST_DATA_C)){
 						table_ca.setModel(UTestData.getUTestData(Constant.BASE_ID, Constant.TAB_ABC));
-					}else {
+					} else if(Constant.TAB_ABC.equals(Constant.TEST_DATA_TEST)){
+						loadUTestData(Constant.BASE_ID);
+					}
+					else {
 						loadUBaseInfo(Constant.BASE_ID);
 					}
 				}
@@ -1468,6 +1476,26 @@ public class UFrame extends JFrame {
 			this.ceShiRiQi.setText(map.get("ceShiRiQi"));
 			this.ceShiJieLun.setText(map.get("ceShiJieLun"));
 			this.zhengShuBianHao.setText(map.get("zhengShuBianHao"));
+		}
+	}
+	
+	/**
+	 * 加载测试数tab
+	 * @param baseId
+	 */
+	public void loadUTestData(Long baseId){
+		if(yiciDianya!=null){//不为空时，表示frame已经初始化了jtextfield，否则会报错。
+			Map< String, String> map= UBaseInfo.getUTestInfo(baseId);
+			this.yiciDianya.setText(map.get("yiciDianya"));
+			this.erciDianya.setText(map.get("erciDianya"));
+			this.gonglvYinsu.setText(map.get("gonglvYinsu"));
+			this.zhunqueDengji.setSelectedItem(map.get("zhunqueDengji"));
+			this.edingFuhe.setText(map.get("edingFuhe"));
+			this.xiaxianFuhe.setText(map.get("xiaxianFuhe"));
+			this.yiciDianya.setText(map.get("yiciDianya"));
+			this.dierRaozuFuhe.setText(map.get("dierRaozuFuhe"));
+			this.dierRaozuXiaxianFuhe.setText(map.get("dierRaozuXiaxianFuhe"));
+			this.ceshiBianhao.setText(map.get("ceshiBianhao"));
 		}
 	}
 
