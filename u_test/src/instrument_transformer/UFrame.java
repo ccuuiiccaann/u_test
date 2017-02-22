@@ -242,6 +242,27 @@ public class UFrame extends JFrame {
 					}else {
 						JOptionPane.showMessageDialog(null, "保存失败！","错误",JOptionPane.ERROR_MESSAGE);
 					}
+				}else if(Constant.TAB_ABC.equals(Constant.TEST_DATA_TEST)){
+					Map<String, String> map=new HashMap<>();
+					map.put("yiciDianya", yiciDianya.getText());
+					map.put("erciDianya", erciDianya.getText());
+					map.put("gonglvYinsu", gonglvYinsu.getText());
+					map.put("zhunqueDengji", zhunqueDengji.getSelectedItem()+"");
+					map.put("edingFuhe", edingFuhe.getText());
+					map.put("xiaxianFuhe", xiaxianFuhe.getText());
+					map.put("yiciDianya", yiciDianya.getText());
+					map.put("dierRaozuFuhe", dierRaozuFuhe.getText());
+					map.put("dierRaozuXiaxianFuhe", dierRaozuXiaxianFuhe.getText());
+					map.put("ceshiBianhao", ceshiBianhao.getText());
+					boolean b=UBaseInfo.updateUTestData(map, Constant.BASE_ID);
+					if(b){
+						JOptionPane.showMessageDialog(null, "保存成功。");
+						if(MainFrame.uFrame.uBaseTable!=null){
+							MainFrame.uFrame.uBaseTable.setModel(UBaseInfo.getUTableData());
+						}
+					}else {
+						JOptionPane.showMessageDialog(null, "保存失败！","错误",JOptionPane.ERROR_MESSAGE);
+					}
 				}else {
 					TableModel model=new DefaultTableModel();
 					if(Constant.TAB_ABC.equals(Constant.TEST_DATA_A)){//如果选中的是tab a

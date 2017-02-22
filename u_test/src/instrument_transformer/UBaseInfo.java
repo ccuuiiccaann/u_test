@@ -394,4 +394,39 @@ public class UBaseInfo {
 		}
 		return false;
 	}
+
+	/**
+	 * 保存测试信息
+	 * @param map
+	 * @param bASE_ID
+	 * @return
+	 */
+	public static boolean updateUTestData(Map<String, String> map, Long baseId) {
+		Connection conn=DBConnection.getInstance();
+		try {
+			Statement st=conn.createStatement();
+			String yiciDianya=map.get("yiciDianya");
+			String erciDianya=map.get("erciDianya");
+			String gonglvYinsu=map.get("gonglvYinsu");
+			String zhunqueDengji=map.get("zhunqueDengji");
+			String edingFuhe=map.get("edingFuhe");
+			String xiaxianFuhe=map.get("xiaxianFuhe");
+			String dierRaozuFuhe=map.get("dierRaozuFuhe");
+			String dierRaozuXiaxianFuhe=map.get("dierRaozuXiaxianFuhe");
+			String ceshiBianhao=map.get("ceshiBianhao");
+			String sql="update u_base_info "
+						+ "set u1='"+yiciDianya+"',u2='"+erciDianya+"',"
+						+ "gonglv_yinsu='"+gonglvYinsu+"',zhunque_dengji='"+zhunqueDengji+"',eding_fuhe='"+edingFuhe+"',"
+						+ "xiaxian_fuhe='"+xiaxianFuhe+"',sna2='"+dierRaozuFuhe+"',lna2='"+dierRaozuXiaxianFuhe+"',"
+						+ "ceshi_bianhao='"+ceshiBianhao+"' "
+						+ "where id="+baseId;
+			System.out.println("保存测试信息： "+sql);
+			st.executeUpdate(sql);
+			st.close();
+			return true;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
 }
